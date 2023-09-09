@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'app_services/firebase_service.dart';
 import 'app_services/theme_service.dart';
 import 'constants/hive_box_names.dart';
 import 'constants/strings.dart';
@@ -14,6 +14,7 @@ import 'utils/app_utility.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+   await initializeFirebaseService();
   await _initPreAppServices();
 
   runApplication();

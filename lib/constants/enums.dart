@@ -15,9 +15,8 @@ enum BubbleType {
   receiverBubble,
 }
 
-enum ReportType {
-  user,
-  post,
-  comment,
-  commentReply,
+enum AuthStatus {
+  notDetermined,
+  notLoggedIn,
+  loggedIn,
 }
