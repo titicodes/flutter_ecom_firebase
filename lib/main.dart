@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
           home: const LoginRegister(),
           translations: AppTranslation(),
           locale: Get.deviceLocale,
-          fallbackLocale: const Locale('en', 'IN'),
+          fallbackLocale: const Locale('en', 'NG'),
         ),
       ),
     );
