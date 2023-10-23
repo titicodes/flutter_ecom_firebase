@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecom_firebase/constants/dimens.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -7,7 +8,13 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body:SingleChildScrollView(
-        
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Dimens.boxHeight20
+            
+          ],
+        ),
       )
     );
   }

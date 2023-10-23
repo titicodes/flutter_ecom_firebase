@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecom_firebase/constants/assets.dart';
 
+import '../../../constants/colors.dart';
+import '../../../constants/dimens.dart';
+import '../../../constants/strings.dart';
+import '../../../constants/styles.dart';
 import 'login_view.dart';
 
 class LoginRegister extends StatelessWidget {
@@ -7,97 +12,93 @@ class LoginRegister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          physics: const ScrollPhysics(),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 60.0,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.map_outlined,
-                    color: Colors.black,
-                  ),
-                  Text(
-                    'Keliene',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Poppins',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 40.0),
-              const Text(
-                'The Right Address \n for shopping \n Anyday',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Poppins',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              const Text(
-                'It is now very easy to reach \nto reach the best quality among all',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Poppins',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 40.0),
-              Container(
-                alignment: Alignment.center,
-                margin: const EdgeInsets.symmetric(horizontal: 40),
-                height: 50,
-                width: double.infinity,
-                decoration:
-                    const BoxDecoration(color: Color.fromARGB(255, 9, 86, 150)),
-                child: const Text(
-                  'Register',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
+    return Container(
+      height: Dimens.screenHeight,
+      width: Dimens.screenWidth,
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage(AssetValues.secondScreenBackground,))
+      ),
+      child: Scaffold(
+          appBar: AppBar(),
+          body: SingleChildScrollView(
+            physics: const ScrollPhysics(),
+            child: Column(
+              children: [
+              Dimens.boxHeight60,
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.map_outlined,
+                      color: ColorValues.blackColor20,
+                    ),
+                    Text(
+                     StringValues.keliene,
+                      style: AppStyles.style14Bold,
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 20.0),
-              GestureDetector(
-                // Within the `FirstRoute` widget
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginView()),
-                  );
-                },
-                child: Container(
+                Dimens.boxHeight40,
+                 Text(
+                 StringValues.rightAddress,
+                  style: AppStyles.style11Bold,
+                  textAlign: TextAlign.center,
+                ),
+               Dimens.boxHeight32,
+                const Text(
+                  StringValues.bestQuality,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 40.0),
+                Container(
                   alignment: Alignment.center,
                   margin: const EdgeInsets.symmetric(horizontal: 40),
                   height: 50,
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 232, 235, 238)),
+                      color: Color.fromARGB(255, 9, 86, 150)),
                   child: const Text(
-                    'Login',
+                    'Register',
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ));
+                const SizedBox(height: 20.0),
+                GestureDetector(
+                  // Within the `FirstRoute` widget
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginView()),
+                    );
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric(horizontal: 40),
+                    height: 50,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 232, 235, 238)),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )),
+    );
   }
 }
