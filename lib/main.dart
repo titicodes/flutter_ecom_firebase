@@ -45,7 +45,7 @@ Future<void> _initPreAppServices() async {
 
   // Initialized Gex Services
   AppUtility.log('Initializing Get Services');
-  Get.put(AppThemeController(), permanent: true);
+ // Get.put(AppThemeController(), permanent: true);
   AppUtility.log('Get Services Initialized');
 }
 
