@@ -13,6 +13,7 @@ abstract class AppPages {
       transitionDuration: transitionDuration,
       transition: defaultTransition,
     ),
+    
   ];
   
   static var transitionDuration = const Duration(milliseconds: 500);

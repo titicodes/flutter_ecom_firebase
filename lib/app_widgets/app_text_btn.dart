@@ -48,6 +48,7 @@ class NxTextButton extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
         ),
+        
       ),
     );
   }

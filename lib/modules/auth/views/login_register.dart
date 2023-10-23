@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecom_firebase/constants/assets.dart';
 
+import '../../../constants/colors.dart';
+import '../../../constants/dimens.dart';
+import '../../../constants/strings.dart';
+import '../../../constants/styles.dart';
 import 'login_view.dart';
 
 class LoginRegister extends StatelessWidget {
@@ -9,10 +13,10 @@ class LoginRegister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(AssetsValues.secondScreenBackground,))
+      height: Dimens.screenHeight,
+      width: Dimens.screenWidth,
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage(AssetValues.secondScreenBackground,))
       ),
       child: Scaffold(
           appBar: AppBar(),
@@ -20,41 +24,29 @@ class LoginRegister extends StatelessWidget {
             physics: const ScrollPhysics(),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 60.0,
-                ),
-                const Row(
+              Dimens.boxHeight60,
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.map_outlined,
-                      color: Colors.black,
+                      color: ColorValues.blackColor20,
                     ),
                     Text(
-                      'Keliene',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Poppins',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
+                     StringValues.keliene,
+                      style: AppStyles.style14Bold,
                     ),
                   ],
                 ),
-                const SizedBox(height: 40.0),
-                const Text(
-                  'The Right Address \n for shopping \n Anyday',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Poppins',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
+                Dimens.boxHeight40,
+                 Text(
+                 StringValues.rightAddress,
+                  style: AppStyles.style11Bold,
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                  height: 30.0,
-                ),
+               Dimens.boxHeight32,
                 const Text(
-                  'It is now very easy to reach \nto reach the best quality among all',
+                  StringValues.bestQuality,
                   style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Poppins',

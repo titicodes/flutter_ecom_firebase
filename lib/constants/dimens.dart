@@ -32,6 +32,7 @@ abstract class Dimens {
   static SizedBox boxWidth60 = SizedBox(width: sixty);
   static SizedBox boxWidth8 = SizedBox(width: eight);
   static SizedBox boxWidth80 = SizedBox(width: eighty);
+
   static Divider divider = Divider(
     height: Dimens.zero,
     thickness: Dimens.pointEight,
@@ -75,6 +76,8 @@ abstract class Dimens {
 
   static EdgeInsets edgeInsets10 = EdgeInsets.all(ten);
   static EdgeInsets edgeInsets12 = EdgeInsets.all(twelve);
+  static EdgeInsets edgeInsetsOnlyTop10 =
+      EdgeInsets.only(top: ten, right: zero, left: zero, bottom: zero);
   static EdgeInsets edgeInsets12_0 = EdgeInsets.symmetric(
     vertical: twelve,
     horizontal: zero,

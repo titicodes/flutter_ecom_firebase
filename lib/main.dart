@@ -7,14 +7,15 @@ import 'app_services/firebase_service.dart';
 import 'app_services/theme_service.dart';
 import 'constants/hive_box_names.dart';
 import 'constants/strings.dart';
-import 'modules/auth/views/login_register.dart';
 
+
+import 'modules/auth/views/register_view.dart';
 import 'translations/app_translations.dart';
 import 'utils/app_utility.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await initializeFirebaseService();
+  //await initializeFirebaseService();
   await _initPreAppServices();
 
   runApplication();
@@ -74,7 +75,7 @@ class MyApp extends StatelessWidget {
           darkTheme: logic.getDarkThemeData(),
           //getPages: AppPages.pages,
           // initialRoute: _handleAppInitialRoute(),
-          home: const LoginRegister(),
+          home: const RegisterView(),
           translations: AppTranslation(),
           locale: Get.deviceLocale,
           fallbackLocale: const Locale('en', 'NG'),

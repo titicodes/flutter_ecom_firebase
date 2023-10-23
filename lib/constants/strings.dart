@@ -1,6 +1,11 @@
 abstract class StringValues {
   static const appName = "FsHOp";
 
+  static const bestQuality =
+      'It is now very easy to reach \nto reach the best quality among all';
+
+  static const cancelGoogleSignIn = 'Google login cancelled by user';
+
   static const dark = 'Dark';
   static const darkMode = 'Dark Mode';
   static const darkModeDesc = 'Use dark theme';
@@ -26,7 +31,7 @@ abstract class StringValues {
       "Are you sure you want to delete it? You can confirm your choice by selecting the option below.";
 
   static const developedBy = 'Developed By';
-    static const disable = 'Disable';
+  static const disable = 'Disable';
   static const display = 'Display';
   static const doNotHaveAccount = "Don't have an account?";
   static const doNotHaveOtp = "Don't have an OTP?";
@@ -36,6 +41,7 @@ abstract class StringValues {
   static const download = 'Download';
   static const downloadArchiveOfData = 'Download an archive of your data';
   static const downloadLatestApp = 'Download Latest App';
+
   static const editProfile = 'Edit Profile';
   static const email = 'Email';
   static const emailOrUsername = 'Email or username';
@@ -93,6 +99,7 @@ abstract class StringValues {
   static const errorOccurred = 'An error occurred, please try again.';
   static const exit = 'Exit';
 
+  static const keliene = 'Keliene';
   static const loginText = "Login";
 
   static const no = 'No';
@@ -115,6 +122,7 @@ abstract class StringValues {
   static const pleaseWait = 'Please wait...';
 
   static const rightAddress = 'The Right Address \n for shopping \n Anyday';
+  static const register = "Register";
 
   static const signupText = "Sign Up";
   static const submit = 'Submit';
