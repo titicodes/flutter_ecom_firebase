@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ecom_firebase/modules/auth/controllers/register_controller.dart';
+import 'package:flutter_ecom_firebase/modules/auth/views/login_view.dart';
+import 'package:flutter_ecom_firebase/modules/auth/views/register_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -7,17 +10,16 @@ import 'app_services/firebase_service.dart';
 import 'app_services/theme_service.dart';
 import 'constants/hive_box_names.dart';
 import 'constants/strings.dart';
+import 'firebase_options.dart';
 
-
-import 'modules/auth/views/register_view.dart';
 import 'translations/app_translations.dart';
 import 'utils/app_utility.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await initializeFirebaseService();
+  await initializeFirebaseService();
   await _initPreAppServices();
-
+  
   runApplication();
 }
 
@@ -46,6 +48,7 @@ Future<void> _initPreAppServices() async {
   // Initialized Gex Services
   AppUtility.log('Initializing Get Services');
   Get.put(AppThemeController(), permanent: true);
+  Get.put(RegisterController(), permanent: true);
   AppUtility.log('Get Services Initialized');
 }
 

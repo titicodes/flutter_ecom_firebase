@@ -36,7 +36,7 @@ abstract class ColorValues {
   static const Color primaryColor70 = Color.fromRGBO(240, 90, 100, .7);
   static const Color primaryColor80 = Color.fromRGBO(240, 90, 100, .8);
   static const Color primaryColor90 = Color.fromRGBO(240, 90, 100, .9);
-  static const Color primaryColor = Color.fromRGBO(240, 90, 100, 1);
+  static const Color primaryColor = Color.fromRGBO(56, 87, 223, 1);
 
   static const Color primaryLightColor = Color.fromARGB(200, 240, 90, 100);
 

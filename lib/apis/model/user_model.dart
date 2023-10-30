@@ -15,22 +15,23 @@ class UserModel extends Equatable {
   String? createdAt;
   bool? isVerified;
   String? fcmToken;
+  String? displayName;
   List<CartItemModel>? cart;
 
-  UserModel({
-    this.email,
-    this.userId,
-    this.firstName,
-    this.profilePic,
-    this.bannerImage,
-    this.key,
-    this.contact,
-    this.createdAt,
-    this.lastName,
-    this.isVerified,
-    this.fcmToken,
-    this.cart
-  });
+  UserModel(
+      {this.email,
+      this.userId,
+      this.firstName,
+      this.profilePic,
+      this.bannerImage,
+      this.key,
+      this.contact,
+      this.createdAt,
+      this.lastName,
+      this.isVerified,
+      this.fcmToken,
+      this.displayName,
+      this.cart});
 
   UserModel.fromJson(Map<dynamic, dynamic>? map) {
     if (map == null) {
@@ -47,7 +48,8 @@ class UserModel extends Equatable {
     lastName = map['userName'];
     fcmToken = map['fcmToken'];
     isVerified = map['isVerified'] ?? false;
-     if (map['followerList'] != null) {
+    displayName = map['displayName'];
+    if (map['followerList'] != null) {
       cart = <CartItemModel>[];
       map['cart'].forEach((value) {
         cart!.add(value);
@@ -67,26 +69,27 @@ class UserModel extends Equatable {
       'userName': lastName,
       'isVerified': isVerified ?? false,
       'fcmToken': fcmToken,
+      'displayName':displayName,
       'cart': cart,
     };
   }
 
-  UserModel copyWith({
-    String? email,
-    String? userId,
-    String? firstName,
-    String? profilePic,
-    String? key,
-    String? contact,
-    String? bio,
-    String? dob,
-    String? bannerImage,
-    String? createdAt,
-    String? lastName,
-    bool? isVerified,
-    String? fcmToken,
-    List<CartItemModel>? cart
-  }) {
+  UserModel copyWith(
+      {String? email,
+      String? userId,
+      String? firstName,
+      String? profilePic,
+      String? key,
+      String? contact,
+      String? bio,
+      String? dob,
+      String? bannerImage,
+      String? createdAt,
+      String? lastName,
+      bool? isVerified,
+      String? fcmToken,
+      String? displayName,
+      List<CartItemModel>? cart}) {
     return UserModel(
       email: email ?? this.email,
       contact: contact ?? this.contact,
@@ -99,7 +102,8 @@ class UserModel extends Equatable {
       userId: userId ?? this.userId,
       lastName: lastName ?? this.lastName,
       fcmToken: fcmToken ?? this.fcmToken,
-       cart: cart ?? this.cart,
+      cart: cart ?? this.cart,
+      displayName: displayName ?? this.displayName
     );
   }
 
@@ -116,6 +120,7 @@ class UserModel extends Equatable {
         createdAt,
         isVerified,
         fcmToken,
-        cart
+        cart,
+        displayName
       ];
 }

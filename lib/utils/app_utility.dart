@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecom_firebase/modules/string_extensions.dart';
 import 'package:get/get.dart';
@@ -8,6 +10,7 @@ import 'package:rive/rive.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 import '../app_widgets/app_text_btn.dart';
 import '../app_widgets/circular_progress_indicator.dart';
@@ -17,6 +20,9 @@ import '../constants/dimens.dart';
 import '../constants/strings.dart';
 import '../constants/styles.dart';
 
+
+final kAnalytics = FirebaseAnalytics.instance;
+final DatabaseReference kDatabase = FirebaseDatabase.instance.ref();
 abstract class AppUtility {
   /// Logger
 
@@ -67,6 +73,26 @@ abstract class AppUtility {
     if (FocusManager.instance.primaryFocus!.hasFocus) {
       FocusManager.instance.primaryFocus?.unfocus();
     }
+  }
+  static void logEvent(String event, {Map<String, dynamic>? parameter}) {
+    kReleaseMode
+        ? kAnalytics.logEvent(name: event, parameters: parameter)
+        : print("[EVENT]: $event");
+  }
+
+  // Get user name
+   static String getUserName({
+    required String id,
+    required String name,
+  }) {
+    String userName = '';
+    if (name.length > 15) {
+      name = name.substring(0, 6);
+    }
+    name = name.split(' ')[0];
+    id = id.substring(0, 4).toLowerCase();
+    userName = '@$name$id';
+    return userName;
   }
 
   /// Show Loading Dialog
